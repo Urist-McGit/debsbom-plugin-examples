@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "debsbom_plugin_examples"
+version = "0.0.1"
+dependencies = [
+  "debsbom>=0.4.0",
+]
+requires-python = ">=3.11"
+authors = [
+  { name="Christoph Steiger", email="christoph.steiger@siemens.com" },
+]
+maintainers = [
+  { name="Christoph Steiger", email="christoph.steiger@siemens.com" },
+]
+description = "Examples for debsbom plugins."
+readme = "README.md"
+license = "MIT"
+classifiers = [
+  "Intended Audience :: Developers",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Operating System Kernels :: Linux" ,
+  "Topic :: Utilities",
+]
+
+[tool.black]
+line-length = 100
+
+[project.entry-points."debsbom.download.resolver"]
+simple-debian-snapshot = "debsbom_plugin_examples.resolver:setup_resolver"
