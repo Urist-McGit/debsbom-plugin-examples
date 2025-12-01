@@ -1,0 +1,35 @@
+# Copyright (C) 2025 Siemens
+#
+# SPDX-License-Identifier: MIT
+
+name: Tests
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install required dependencies
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+
+      - name: Test Resolver Plugin Installation
+        shell: bash
+        run: debsbom download -h | grep simple-debian-snapshot
+
+      - name: Test Resolver Plugin
+        shell: bash
+        run: |
+          debsbom -v download --resolver simple-debian-snapshot tests/data/example.spdx.json
