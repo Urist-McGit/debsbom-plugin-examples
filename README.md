@@ -24,7 +24,7 @@ You can verify the installation worked by calling
 debsbom download -h
 ```
 
-and checking if the `simple-snapshot-resolver` is available as a resolver choice.
+and checking if the `simple-debian-snapshot` is available as a resolver choice.
 
 ## Download Resolver Plugin
 
