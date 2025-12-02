@@ -11,10 +11,9 @@ virtualenv venv
 . venv/bin/activate
 ```
 
-Then install debsbom, and afterwards this package:
+Then install this plugin which automatically pulls in debsbom in the correct version:
 
 ```
-pip install debsbom
 pip install .
 ```
 
