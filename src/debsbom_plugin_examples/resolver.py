@@ -6,7 +6,6 @@ from debsbom.download.plugin import ChecksumAlgo, Package, RemoteFile, ResolveEr
 import logging
 from requests import Session
 
-
 SNAPSHOT_DOMAIN = "https://snapshot.debian.org"
 
 logger = logging.getLogger(__name__)
